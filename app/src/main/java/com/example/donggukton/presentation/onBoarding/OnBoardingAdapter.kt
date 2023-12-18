@@ -1,4 +1,4 @@
-package com.example.donggukton.presentation
+package com.example.donggukton.presentation.onBoarding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
