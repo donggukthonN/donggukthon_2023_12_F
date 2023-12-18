@@ -10,5 +10,9 @@
     <string name="onBoarding_des_4">오직 12/1 ~ 12~7\n단 7일만 입장이 가능 합니다\n지금 바로 참여해 보세요!</string>
     <string name="login">로그인</string>
     <string name="sign_up">회원가입</string>
+
+    <!--  login  -->
     <string name="sign_up_under_line"><u>회원가입</u></string>
+    <string name="login_id_hint">ID</string>
+    <string name="login_hint_password">PASSWORD</string>
 </resources>
