@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.addFriend.AddFriendActivity">
+
+        <ImageView
+            android:id="@+id/iv_add_friend_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_add_friend_logo"
+            android:layout_width="0dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/img_red_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_add_friend_back" />
+
+        <EditText
+            android:id="@+id/et_add_friend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:layout_marginTop="42sp"
+            android:background="@drawable/shape_stroke_radius_8"
+            android:hint="친구의 아이디를 입력하세요"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textAppearance="@style/Body_M1"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/btn_done"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_add_friend_logo" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_done"
+            style="@style/Widget.FullButton.Basic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:backgroundTint="@color/green"
+            android:paddingVertical="12dp"
+            android:text="완료"
+            android:textAppearance="@style/Body_M1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/et_add_friend" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_marginTop="20dp"
+            android:id="@+id/cg_friend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            app:chipSpacingVertical="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_done"
+            app:layout_constraintStart_toStartOf="@+id/et_add_friend"
+            app:layout_constraintTop_toBottomOf="@id/et_add_friend" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

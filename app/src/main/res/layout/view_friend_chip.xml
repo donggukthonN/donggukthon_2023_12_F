@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_fail_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#005924"
+        android:checkable="false"
+        android:paddingVertical="6dp"
+        android:text="%s 님 -"
+        android:textAppearance="@style/Body_M2"
+        android:textColor="@color/white"
+        app:chipEndPadding="8dp"
+        app:chipMinTouchTargetSize="0dp"
+        app:chipStartPadding="8dp"
+        app:chipStrokeColor="@color/white"
+        app:rippleColor="@android:color/transparent" />
+</layout>
