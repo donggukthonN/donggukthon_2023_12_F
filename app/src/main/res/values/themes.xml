@@ -10,6 +10,10 @@
 
     <style name="Theme.DonggukTon" parent="Base.Theme.DonggukTon" />
 
+    <style name="Radius8">
+        <item name="cornerSize">8dp</item>
+    </style>
+
     <!--  Widget  -->
     <style name="Widget.Material.Button.Basic" parent="">
         <item name="android:insetTop">0dp</item>
@@ -23,5 +27,9 @@
         <item name="android:layout_height">42dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="cornerRadius">8dp</item>
+    </style>
+
+    <style name="Widget.FullButton.Basic.Elevation" parent="Widget.FullButton.Basic">
+        <item name="android:elevation">5dp</item>
     </style>
 </resources>
