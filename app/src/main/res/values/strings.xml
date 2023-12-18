@@ -8,6 +8,11 @@
     <string name="onBoarding_des_2">설레이는 12월🎄\n25일간의 특별한 여정이\n여러분을 기다리고 있습니다</string>
     <string name="onBoarding_des_3">하루에 하나씩 열리는\n질문과 미션에 답 하면서\n감동과 기억을 기록해 보세요☃️</string>
     <string name="onBoarding_des_4">오직 12/1 ~ 12~7\n단 7일만 입장이 가능 합니다\n지금 바로 참여해 보세요!</string>
-    <string name="onboarding_login">로그인</string>
-    <string name="onboarding_sign_up">회원가입</string>
+    <string name="login">로그인</string>
+    <string name="sign_up">회원가입</string>
+
+    <!--  login  -->
+    <string name="sign_up_under_line"><u>회원가입</u></string>
+    <string name="login_id_hint">ID</string>
+    <string name="login_hint_password">PASSWORD</string>
 </resources>
