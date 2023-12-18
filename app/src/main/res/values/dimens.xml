@@ -2,5 +2,7 @@
 <resources>
     <dimen name="dialog_width">300dp</dimen>
     <dimen name="dialog_height">150dp</dimen>
+
+    <dimen name="spacing_32">32dp</dimen>
 </resources>
 
