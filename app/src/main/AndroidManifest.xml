@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.home.HomeActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.onBoarding.OnBoardingActivity"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -33,4 +36,5 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
     </application>
+
 </manifest>
