@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_login_logo"
+            android:layout_width="110dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:padding="6dp"
+            android:src="@drawable/img_red_logo"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+        <EditText
+            android:id="@+id/et_login_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:layout_marginTop="@dimen/spacing_32"
+            android:background="@drawable/shape_stroke_radius_8"
+            android:hint="ID"
+            android:padding="15dp"
+            android:textAppearance="@style/Body_M1"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_login_logo" />
+
+        <EditText
+            android:id="@+id/et_login_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shape_stroke_radius_8"
+            android:hint="PASSWORD"
+            android:padding="15dp"
+            android:textAppearance="@style/Body_M1"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_login_id" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login"
+            style="@style/Widget.FullButton.Basic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:layout_marginTop="48dp"
+            android:backgroundTint="@color/green"
+            android:paddingVertical="12dp"
+            android:text="@string/login"
+            android:textAppearance="@style/Body_M1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_login_password" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:padding="5dp"
+            android:text="@string/sign_up_under_line"
+            android:textAppearance="@style/Body_M1"
+            android:textColor="#9F9F9F"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
