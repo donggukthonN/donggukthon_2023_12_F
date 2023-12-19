@@ -25,7 +25,7 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
         binding.tvOne.setOnClickListener {
             CompletedAnswerDialogFragment().show(
                 supportFragmentManager,
-                CompletedAnswerDialogFragment().tag
+                CompletedAnswerDialogFragment().tag,
             )
         }
     }
