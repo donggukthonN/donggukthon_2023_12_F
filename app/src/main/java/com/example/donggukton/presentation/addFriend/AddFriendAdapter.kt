@@ -11,23 +11,23 @@ import com.example.donggukton.util.extension.setOnSingleClickListener
 
 class AddFriendAdapter(
     private val onClick: (Int) -> Unit,
-) : ListAdapter<Friend, AddFriendAdapter.HistoryViewHolder>(
+) : ListAdapter<Friend, AddFriendAdapter.AddFriendViewHolder>(
     ItemDiffCallback<Friend>(
-        onItemsTheSame = { old, new -> old == new },
+        onItemsTheSame = { old, new -> old.id == new.id },
         onContentsTheSame = { old, new -> old == new },
     ),
 ) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddFriendViewHolder {
         val binding = ItemFriendBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return HistoryViewHolder(binding)
+        return AddFriendViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AddFriendViewHolder, position: Int) {
         holder.onBind(getItem(position))
     }
 
-    inner class HistoryViewHolder(private val binding: ItemFriendBinding) :
+    inner class AddFriendViewHolder(private val binding: ItemFriendBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(data: Friend) {

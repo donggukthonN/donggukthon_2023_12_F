@@ -12,66 +12,95 @@
         android:layout_height="match_parent"
         tools:context=".presentation.addFriend.AddFriendActivity">
 
-        <ImageView
-            android:id="@+id/iv_add_friend_back"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:padding="6dp"
-            android:src="@drawable/ic_back"
+            android:background="#E4E7E9"
+            android:paddingBottom="26dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/iv_add_friend_logo"
-            android:layout_width="0dp"
-            android:layout_height="91dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/img_red_logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_add_friend_back" />
+            <ImageView
+                android:id="@+id/iv_add_friend_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/et_add_friend"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_32"
-            android:layout_marginTop="42sp"
-            android:background="@drawable/shape_stroke_radius_8"
-            android:hint="친구의 아이디를 입력하세요"
-            android:inputType="text"
-            android:padding="15dp"
-            android:textAppearance="@style/Body_M1"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/btn_done"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_add_friend_logo" />
+            <ImageView
+                android:id="@+id/iv_add_friend_logo"
+                android:layout_width="0dp"
+                android:layout_height="91dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/img_red_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_add_friend_back" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_done"
-            style="@style/Widget.FullButton.Basic"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_32"
-            android:backgroundTint="@color/green"
-            android:paddingVertical="12dp"
-            android:text="완료"
-            android:textAppearance="@style/Body_M1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/et_add_friend" />
+            <EditText
+                android:id="@+id/et_add_friend_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_32"
+                android:layout_marginTop="42dp"
+                android:background="@drawable/shape_stroke_radius_8"
+                android:hint="친구의 아이디를 입력하세요"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textAppearance="@style/Body_M1"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/btn_done"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_add_friend_logo" />
+
+            <EditText
+                android:id="@+id/et_add_friend_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_32"
+                android:layout_marginTop="9dp"
+                android:background="@drawable/shape_stroke_radius_8"
+                android:hint="친구의 코드를 입력하세요"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textAppearance="@style/Body_M1"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/btn_done"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_add_friend_id" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_done"
+                style="@style/Widget.FullButton.Basic"
+                android:layout_width="0dp"
+                android:layout_height="89dp"
+                android:layout_marginHorizontal="@dimen/spacing_32"
+                android:backgroundTint="#338A56"
+                android:paddingVertical="12dp"
+                android:text="완료"
+                android:textAppearance="@style/Body_M1"
+                app:layout_constraintBottom_toBottomOf="@+id/et_add_friend_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_add_friend_id" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_friend_list"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginHorizontal="30dp"
             android:layout_marginTop="20dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btn_done"
-            app:layout_constraintStart_toStartOf="@+id/et_add_friend"
-            app:layout_constraintTop_toBottomOf="@+id/et_add_friend"
+            app:layout_constraintEnd_toEndOf="@+id/cl_1"
+            app:layout_constraintStart_toStartOf="@+id/cl_1"
+            app:layout_constraintTop_toBottomOf="@+id/cl_1"
             tools:listitem="@layout/item_friend" />
 
 

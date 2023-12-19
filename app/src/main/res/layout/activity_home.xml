@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/red"
+        android:background="@drawable/bg_calendar"
         tools:context=".presentation.home.HomeActivity">
 
         <ImageView
@@ -18,7 +18,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
             android:src="@drawable/ic_question"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,28 +33,54 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/iv_question" />
 
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="21dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/iv_mypage" />
+
         <TextView
-            android:layout_marginTop="30dp"
             android:id="@+id/tv_home_title"
+            style="@style/Body_M1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/pretendard_bold"
             android:gravity="center"
             android:lineHeight="34dp"
-            android:text="%s의\nQ_calendar"
-            android:textColor="#FBBC04"
-            android:textSize="32sp"
-            android:textStyle="bold"
+            android:text="%s이의"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_question" />
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <ImageView
+            android:id="@+id/iv_Q_Calendar"
+            android:layout_width="281dp"
+            android:layout_height="74dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/q_calendar"
+            app:layout_constraintEnd_toEndOf="@id/tv_home_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_home_title"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="21dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/iv_Q_Calendar" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_tree1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,8 +88,8 @@
 
             <ImageView
                 android:id="@+id/iv_tree1"
-                android:layout_width="324dp"
-                android:layout_height="487dp"
+                android:layout_width="321dp"
+                android:layout_height="470dp"
                 android:src="@drawable/img_tree"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -248,7 +275,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -256,8 +283,8 @@
 
             <ImageView
                 android:id="@+id/iv_tree2"
-                android:layout_width="324dp"
-                android:layout_height="487dp"
+                android:layout_width="321dp"
+                android:layout_height="470dp"
                 android:src="@drawable/img_tree"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
