@@ -17,12 +17,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.question.QuestionActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.addFriend.AddFriendActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.result.ResultActivity"
             android:exported="false" />
-       <activity
+        <activity
             android:name=".presentation.home.HomeActivity"
             android:exported="true" />
         <activity

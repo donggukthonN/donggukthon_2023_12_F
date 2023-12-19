@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.question.QuestionActivity">
+
+        <ImageView
+            android:id="@+id/iv_question_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_question_num"
+            style="@style/Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="18dp"
+            android:text="No.%d"
+            android:textColor="#797979"
+            app:layout_constraintStart_toEndOf="@+id/iv_question_back"
+            app:layout_constraintTop_toBottomOf="@+id/iv_question_back"
+            tools:text="No.1" />
+
+        <ImageView
+            android:id="@+id/iv_question_logo"
+            android:layout_width="92dp"
+            android:layout_height="105dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/img_question_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_question_num" />
+
+        <TextView
+            android:id="@+id/tv_question_title"
+            style="@style/Title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_question_logo"
+            app:layout_constraintStart_toStartOf="@+id/iv_question_logo"
+            app:layout_constraintTop_toBottomOf="@+id/iv_question_logo"
+            tools:text="크리스마스에는\n누굴 만날 계획인가요?" />
+
+        <EditText
+            android:id="@+id/et_question_answer"
+            style="@style/Title1"
+            android:layout_width="0dp"
+            android:layout_height="221dp"
+            android:layout_marginHorizontal="33dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/shape_stroke_radius_8"
+            android:backgroundTint="#4D005924"
+            android:maxLength="161"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_question_title" />
+
+        <CheckBox
+            android:id="@+id/btn_question_private"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_checkbox"
+            android:button="@android:color/transparent"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:layout_constraintStart_toStartOf="@+id/et_question_answer"
+            app:layout_constraintTop_toBottomOf="@+id/et_question_answer" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/Body_M1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="비공개"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_question_private"
+            app:layout_constraintStart_toEndOf="@+id/btn_question_private"
+            app:layout_constraintTop_toTopOf="@+id/btn_question_private" />
+
+        <ImageView
+            android:id="@+id/btn_question_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:src="@drawable/ic_done"
+            app:layout_constraintEnd_toEndOf="@+id/et_question_answer"
+            app:layout_constraintStart_toStartOf="@+id/et_question_answer"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
