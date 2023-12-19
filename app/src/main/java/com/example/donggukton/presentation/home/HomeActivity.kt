@@ -1,11 +1,11 @@
-package com.example.donggukton.presentation
+package com.example.donggukton.presentation.home
 
 import android.os.Bundle
 import com.example.donggukton.R
-import com.example.donggukton.databinding.ActivityMainBinding
+import com.example.donggukton.databinding.ActivityHomeBinding
 import com.example.donggukton.util.binding.BindingActivity
 
-class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main){
+class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
