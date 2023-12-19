@@ -2,23 +2,33 @@ package com.example.donggukton.presentation.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.donggukton.data.datasource.local.DonggukStorage
+import com.example.donggukton.data.model.request.LoginRequest
+import com.example.donggukton.data.model.response.LoginResponse
+import com.example.donggukton.domain.repository.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
 class AuthViewModel @Inject constructor(
-
+    private val authRepository: AuthRepository,
+    private val localDataSource: DonggukStorage
 ) : ViewModel() {
     val nickName = MutableStateFlow("")
     val id = MutableStateFlow("")
     val password = MutableStateFlow("")
     val passwordCheck = MutableStateFlow("")
+    private val _loginInfo = MutableStateFlow<LoginResponse?>(null)
+    val loginInfo get() = _loginInfo.asStateFlow()
 
     val isValidNickName: StateFlow<Boolean> = nickName.map { nickName ->
         nickName.isEmpty() or nickName.matches(Regex(NICKNAME_PATTERN))
@@ -35,7 +45,7 @@ class AuthViewModel @Inject constructor(
     val isValidPasswordCheck: StateFlow<Boolean> =
         combine(password, passwordCheck) { password, passwordCheck ->
             passwordCheck.isEmpty() ||
-            password == passwordCheck
+                    password == passwordCheck
         }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), false)
 
     val isValidSignUp: StateFlow<Boolean> =
@@ -47,6 +57,25 @@ class AuthViewModel @Inject constructor(
         ) { isValidNickName, isValidId, isValidPassword, isValidPasswordCheck ->
             isValidNickName && isValidId && isValidPassword && isValidPasswordCheck
         }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), false)
+
+    fun login() {
+        viewModelScope.launch {
+            authRepository.login(
+                LoginRequest(
+                    userId = id.value,
+                    password = password.value
+                )
+            ).onSuccess { response ->
+                _loginInfo.value = response
+            }.onFailure { throwable ->
+                Timber.d(throwable.message)
+            }
+        }
+    }
+
+    fun setUserId(userId: String) {
+        localDataSource.userId = userId
+    }
 
     companion object {
         const val NICKNAME_PATTERN = "^[가-힣A-Za-z]{1,4}\$"

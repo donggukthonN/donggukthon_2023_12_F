@@ -60,6 +60,19 @@ object RetrofitModule {
 
     @Provides
     @Singleton
+    @Logger
+    fun provideLoggingInterceptor(): Interceptor {
+        return HttpLoggingInterceptor().apply {
+            if (DEBUG) {
+                level = HttpLoggingInterceptor.Level.BODY
+            } else {
+                level = HttpLoggingInterceptor.Level.NONE
+            }
+        }
+    }
+
+    @Provides
+    @Singleton
     fun providesAuthRetrofit(okHttpClient: OkHttpClient): Retrofit =
         Retrofit.Builder().baseUrl(BuildConfig.BASE_URL).client(okHttpClient).addConverterFactory(
             Json.asConverterFactory("application/json".toMediaType()),
