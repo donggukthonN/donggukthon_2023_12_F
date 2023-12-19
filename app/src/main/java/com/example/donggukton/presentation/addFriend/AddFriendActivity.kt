@@ -1,28 +1,37 @@
 package com.example.donggukton.presentation.addFriend
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.os.Parcelable
 import com.example.donggukton.R
 import com.example.donggukton.databinding.ActivityAddFriendBinding
-import com.example.donggukton.util.ChipFactory
 import com.example.donggukton.util.binding.BindingActivity
-import com.google.android.material.chip.Chip
 
 class AddFriendActivity : BindingActivity<ActivityAddFriendBinding>(R.layout.activity_add_friend) {
 
-    private val String.toChip: Chip
-        get() = ChipFactory.create(layoutInflater)
+//    private val addFriendAdapter by lazy {
+//        AddFriendAdapter(
+//            onClick = moveToFriendResult(),
+//        )
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+//        binding.rvFriendList.adapter = addFriendAdapter
+//        addFriendAdapter.submitList()
     }
 
-    private fun setMyFailTag() {
-        val chip = binding.etAddFriend.text.toString().toChip.apply {
-            id = View.generateViewId() // 각 Chip에 고유한 ID 부여, TS
-            text = String.format("# %s", getString(i.titleRes))
-        }
-        binding.chipGroupMyFailTag.addView(chip)
+//    private fun moveToFriendResult(): (Int) -> Unit {
+//        return { position ->
+//            val intent = Intent(this, ResultActivity::class.java)
+//            val profileList = addFriendViewModel.friendData.value
+//            intent.putExtra(FRIEND_LIST, profileList?.get(position) as Parcelable)
+//            startActivity(intent)
+//        }
+//    }
 
+    companion object {
+        const val FRIEND_LIST = "friend"
     }
 }

@@ -62,16 +62,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/et_add_friend" />
 
-        <com.google.android.material.chip.ChipGroup
-            android:layout_marginTop="20dp"
-            android:id="@+id/cg_friend"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_friend_list"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            app:chipSpacingVertical="12dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_done"
             app:layout_constraintStart_toStartOf="@+id/et_add_friend"
-            app:layout_constraintTop_toBottomOf="@id/et_add_friend" />
+            app:layout_constraintTop_toBottomOf="@+id/et_add_friend"
+            tools:listitem="@layout/item_friend" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
