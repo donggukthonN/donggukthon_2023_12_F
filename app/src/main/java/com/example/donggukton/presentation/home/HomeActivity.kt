@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.donggukton.R
 import com.example.donggukton.databinding.ActivityHomeBinding
 import com.example.donggukton.presentation.myPage.MyPageActivity
+import com.example.donggukton.presentation.question.CompletedAnswerDialogFragment
 import com.example.donggukton.util.binding.BindingActivity
 
 class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home) {
@@ -20,6 +21,12 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
         }
         binding.ivQuestion.setOnClickListener {
             startActivity(Intent(this, InstructionActivity::class.java))
+        }
+        binding.tvOne.setOnClickListener {
+            CompletedAnswerDialogFragment().show(
+                supportFragmentManager,
+                CompletedAnswerDialogFragment().tag
+            )
         }
     }
 }
