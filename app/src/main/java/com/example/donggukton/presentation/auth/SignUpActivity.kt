@@ -9,5 +9,12 @@ class SignUpActivity: BindingActivity<ActivitySignUpBinding>(R.layout.activity_s
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        addListeners()
+    }
+
+    private fun addListeners(){
+        binding.ivBack.setOnClickListener {
+            finish()
+        }
     }
 }
