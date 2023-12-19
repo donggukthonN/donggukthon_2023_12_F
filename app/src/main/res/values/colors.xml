@@ -7,5 +7,7 @@
     <color name="red">#BF0000</color>
     <color name="yellow">#FBBC04</color>
     <color name="error">#FF0000</color>
+    <color name="lightball_yellow">#FFDF80</color>
+    <color name="lightball_grey">#9F9F9F</color>
 
 </resources>

@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/red">
+        android:background="#26000000">
 
         <ImageView
             android:id="@+id/iv_back"
@@ -26,35 +26,117 @@
             android:id="@+id/tv_my_page_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="다은의 Q_feed"
+            android:layout_marginTop="20dp"
+            android:text="다은의"
             android:textAppearance="@style/Subtitle1_B"
-            android:textColor="@color/yellow"
+            android:textColor="#383838"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_back" />
 
         <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="122dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_my_page_q_feed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my_page_title" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_my_info"
+                style="@style/Widget.FullButton.Basic.Elevation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_32"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/white"
+                android:paddingVertical="12dp"
+                android:text="나의 정보"
+                android:textAppearance="@style/Body_M1"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/btn_my_result"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_my_result"
+                style="@style/Widget.FullButton.Basic.Elevation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_32"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/white"
+                android:paddingVertical="12dp"
+                android:text="@string/my_page_finished_version_title"
+                android:textAppearance="@style/Body_M1"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/btn_my_add_friend"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_my_add_friend"
+                style="@style/Widget.FullButton.Basic.Elevation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_32"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/white"
+                android:paddingVertical="12dp"
+                android:text="@string/my_page_friend_finished_version_title"
+                android:textAppearance="@style/Body_M1"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="-20dp"
+            android:background="@drawable/background_my_page"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/ic_tree_star"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_my_page_title" />
-
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <LinearLayout
             android:id="@+id/layout_tree_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape_stroke_radius_8"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_radius_50"
             android:backgroundTint="@color/green"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="5dp"
-            android:paddingVertical="2dp"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="7dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageView">
@@ -63,9 +145,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/shape_circle_light_ball_on"
-                android:backgroundTint="#FFEDB7" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,12 +154,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/shape_stroke_radius_8"
+            android:background="@drawable/shape_radius_50"
             android:backgroundTint="@color/green"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="2dp"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="7dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_tree_1">
@@ -88,22 +169,24 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off"
-                android:backgroundTint="#FFDF80" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
         </LinearLayout>
 
         <LinearLayout
@@ -111,12 +194,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/shape_stroke_radius_8"
+            android:background="@drawable/shape_radius_50"
             android:backgroundTint="@color/green"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="5dp"
-            android:paddingVertical="2dp"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="7dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_tree_2">
@@ -126,36 +209,40 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off"
-                android:backgroundTint="#FFB323" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
         </LinearLayout>
 
         <LinearLayout
@@ -163,12 +250,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/shape_stroke_radius_8"
+            android:background="@drawable/shape_radius_50"
             android:backgroundTint="@color/green"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="5dp"
-            android:paddingVertical="2dp"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="7dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_tree_3">
@@ -178,50 +265,56 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off"
-                android:backgroundTint="#FFC6FA" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
         </LinearLayout>
 
         <LinearLayout
@@ -229,12 +322,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/shape_stroke_radius_8"
+            android:background="@drawable/shape_radius_50"
             android:backgroundTint="@color/green"
             android:gravity="center"
             android:orientation="horizontal"
-            android:paddingHorizontal="5dp"
-            android:paddingVertical="2dp"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="7dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layout_tree_4">
@@ -244,50 +337,56 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:backgroundTint="#FFA5D0"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:src="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
 
             <ImageView
@@ -295,74 +394,48 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="5dp"
-                android:background="@drawable/shape_circle_light_ball_off" />
-
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
         </LinearLayout>
 
-        <View
-            android:layout_width="40dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="4dp"
-            android:background="#461616"
+        <LinearLayout
+            android:id="@+id/layout_tree_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_stroke_radius_8"
+            android:backgroundTint="#8E4603"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="7dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layout_tree_5" />
+            app:layout_constraintTop_toBottomOf="@id/layout_tree_5">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_my_add_friend3"
-            style="@style/Widget.FullButton.Basic"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_32"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/white"
-            android:paddingVertical="12dp"
-            android:text="나의 정보"
-            android:textAppearance="@style/Body_M1"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/btn_my_add_friend2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_my_add_friend2"
-            style="@style/Widget.FullButton.Basic"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_32"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/white"
-            android:paddingVertical="12dp"
-            android:text="@string/my_page_finished_version_title"
-            android:textAppearance="@style/Body_M1"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/btn_my_add_friend"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_my_add_friend"
-            style="@style/Widget.FullButton.Basic"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/spacing_32"
-            android:layout_marginTop="48dp"
-            android:layout_marginBottom="70dp"
-            android:backgroundTint="@color/white"
-            android:paddingVertical="12dp"
-            android:text="@string/my_page_friend_finished_version_title"
-            android:textAppearance="@style/Body_M1"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/shape_circle_light_ball"
+                android:backgroundTint="@color/lightball_yellow" />
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
