@@ -6,5 +6,6 @@
     <color name="green">#005924</color>
     <color name="red">#BF0000</color>
     <color name="yellow">#FBBC04</color>
+    <color name="error">#FF0000</color>
 
 </resources>
