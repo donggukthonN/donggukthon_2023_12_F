@@ -20,4 +20,16 @@
     <string name="my_page_title">%s의 Q_feed</string>
     <string name="my_page_finished_version_title">%s님의 완성본</string>
     <string name="my_page_friend_finished_version_title">친구 등록/완성본</string>
+
+    <!--  sign uo  -->
+    <string name="sign_up_title">큐피드 회원가입</string>
+    <string name="sign_up_nickname_title">닉네임 입력</string>
+    <string name="sign_up_id_title">아이디 입력</string>
+    <string name="sign_up_pw_title">비밀번호 입력</string>
+    <string name="sign_up_pw_check_title">비밀번호 확인</string>
+    <string name="sign_up_nickname_hint">최대 4자의 한글, 영문만 사용 가능</string>
+    <string name="sign_up_id_hint">6~12자의 영문, 숫자만 사용 가능</string>
+    <string name="sign_up_password_hint">8자 이상의 문자, 숫자, 특수기호 사용 가능</string>
+    <string name="sign_up_id_double_check">중복확인</string>
+    <string name="confirm">확인</string>
 </resources>
