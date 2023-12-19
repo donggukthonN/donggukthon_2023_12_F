@@ -13,7 +13,7 @@ class OnBoardingAdapter : RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewH
         RecyclerView.ViewHolder(binding.root) {
         fun bind(onboarding: OnBoardingViewType) {
             binding.ivOnboardingImg.setImageDrawable(
-                binding.root.context.getDrawable(onboarding.imageRes)
+                binding.root.context.getDrawable(onboarding.imageRes),
             )
             binding.tvOnboarding.text = binding.root.context.getString(onboarding.desRes)
         }
@@ -24,8 +24,8 @@ class OnBoardingAdapter : RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewH
             ItemOnboardingBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
-                false
-            )
+                false,
+            ),
         )
 
     override fun getItemCount() = onBoardingList.size

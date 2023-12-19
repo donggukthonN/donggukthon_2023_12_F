@@ -23,7 +23,6 @@
             android:layout_height="wrap_content"
             android:paddingVertical="6dp"
             android:paddingStart="22dp"
-            android:text="%s 님"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

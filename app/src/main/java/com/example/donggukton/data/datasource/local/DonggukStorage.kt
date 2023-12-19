@@ -2,6 +2,7 @@ package com.example.donggukton.data.datasource.local
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.core.content.edit
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import com.example.donggukton.BuildConfig
@@ -27,8 +28,15 @@ class DonggukStorage @Inject constructor(@ApplicationContext context: Context) {
                 EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM,
             )
         }
+
+    var userId: String
+        set(value) = pref.edit { putString(USERID, value) }
+        get() = pref.getString(
+            USERID,
+            "",
+        ) ?: ""
 }
 
 const val FILE_NAME = "HdDataStore"
-const val ACCESS_TOKEN = "accessToken"
+const val USERID = "userID"
 const val IS_LOGIN = "IsLogin"

@@ -1,18 +1,20 @@
 package com.example.donggukton.presentation.addFriend
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.donggukton.databinding.ItemFriendBinding
-import com.example.donggukton.domain.model.result.Friend
+import com.example.donggukton.domain.model.result.FriendList
 import com.example.donggukton.util.extension.ItemDiffCallback
 import com.example.donggukton.util.extension.setOnSingleClickListener
 
 class AddFriendAdapter(
-    private val onClick: (Int) -> Unit,
-) : ListAdapter<Friend, AddFriendAdapter.AddFriendViewHolder>(
-    ItemDiffCallback<Friend>(
+    private val onClick: (String) -> Unit,
+    private val deleteFriend: (String) -> Unit,
+) : ListAdapter<FriendList.FriendData, AddFriendAdapter.AddFriendViewHolder>(
+    ItemDiffCallback<FriendList.FriendData>(
         onItemsTheSame = { old, new -> old.id == new.id },
         onContentsTheSame = { old, new -> old == new },
     ),
@@ -30,10 +32,20 @@ class AddFriendAdapter(
     inner class AddFriendViewHolder(private val binding: ItemFriendBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(data: Friend) {
-            binding.tvItemName.text = data.id
+        fun onBind(data: FriendList.FriendData) {
+            binding.tvItemName.text = String.format("%s 님", data.id)
+
+            if (data.complete == 0) {
+                val color = Color.parseColor("#707070")
+                binding.clFriend.background.setTint(color)
+                binding.tvItemGotoFriend.isClickable = false
+            }
+
             binding.tvItemGotoFriend.setOnSingleClickListener {
-                onClick(absoluteAdapterPosition)
+                onClick(data.id)
+            }
+            binding.tvItemDeleteFriend.setOnSingleClickListener {
+                deleteFriend(data.id)
             }
         }
     }
