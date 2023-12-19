@@ -19,7 +19,7 @@
         <activity
             android:name=".presentation.result.ResultActivity"
             android:exported="false" />
-      <activity
+        <activity
             android:name=".presentation.home.HomeActivity"
             android:exported="true" />
         <activity
