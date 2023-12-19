@@ -1,6 +1,8 @@
 package com.example.donggukton.di
 
+import com.example.donggukton.data.repository.AuthRepositoryImpl
 import com.example.donggukton.data.repository.FriendRepositoryImpl
+import com.example.donggukton.domain.repository.AuthRepository
 import com.example.donggukton.domain.repository.FriendRepository
 import dagger.Module
 import dagger.Provides
@@ -16,4 +18,9 @@ object RepositoryModule {
     @Singleton
     fun providesFriendRepository(friendRepositoryImpl: FriendRepositoryImpl): FriendRepository =
         friendRepositoryImpl
+
+    @Provides
+    @Singleton
+    fun providesAuthRepository(authRepositoryImpl: AuthRepositoryImpl): AuthRepository =
+        authRepositoryImpl
 }

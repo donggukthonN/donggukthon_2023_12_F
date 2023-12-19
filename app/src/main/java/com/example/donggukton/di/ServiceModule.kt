@@ -1,5 +1,6 @@
 package com.example.donggukton.di
 
+import com.example.donggukton.data.service.AuthService
 import com.example.donggukton.data.service.FriendService
 import dagger.Module
 import dagger.Provides
@@ -16,4 +17,8 @@ object ServiceModule {
     @Provides
     @Singleton
     fun provideFriendService(retrofit: Retrofit): FriendService = retrofit.create()
+
+    @Provides
+    @Singleton
+    fun provideAuthService(retrofit: Retrofit): AuthService = retrofit.create()
 }

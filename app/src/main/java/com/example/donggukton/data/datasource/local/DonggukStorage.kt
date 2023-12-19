@@ -35,8 +35,17 @@ class DonggukStorage @Inject constructor(@ApplicationContext context: Context) {
             USERID,
             "",
         ) ?: ""
-}
 
-const val FILE_NAME = "HdDataStore"
-const val USERID = "userID"
-const val IS_LOGIN = "IsLogin"
+    var startDate: String
+        set(value) = pref.edit { putString(START_DATE, value) }
+        get() = pref.getString(
+            START_DATE,
+            "",
+        ) ?: ""
+
+    companion object {
+        const val FILE_NAME = "HdDataStore"
+        const val USERID = "userID"
+        const val START_DATE = "startDate"
+    }
+}
