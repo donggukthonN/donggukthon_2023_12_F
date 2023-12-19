@@ -20,6 +20,12 @@
             android:name=".presentation.addFriend.AddFriendActivity"
             android:exported="false" />
         <activity
+            android:name=".presentation.result.ResultActivity"
+            android:exported="false" />
+       <activity
+            android:name=".presentation.home.HomeActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.onBoarding.OnBoardingActivity"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -32,6 +38,11 @@
         </activity>
         <activity
             android:name=".presentation.auth.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".presentation.myPage.MyPageActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

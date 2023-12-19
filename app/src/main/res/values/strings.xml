@@ -15,4 +15,9 @@
     <string name="sign_up_under_line"><u>회원가입</u></string>
     <string name="login_id_hint">ID</string>
     <string name="login_hint_password">PASSWORD</string>
+
+    <!--  my page  -->
+    <string name="my_page_title">%s의 Q_feed</string>
+    <string name="my_page_finished_version_title">%s님의 완성본</string>
+    <string name="my_page_friend_finished_version_title">친구 등록/완성본</string>
 </resources>

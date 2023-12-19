@@ -1,11 +1,11 @@
-package com.example.donggukton.presentation
+package com.example.donggukton.presentation.result
 
 import android.os.Bundle
 import com.example.donggukton.R
-import com.example.donggukton.databinding.ActivityMainBinding
+import com.example.donggukton.databinding.ActivityResultBinding
 import com.example.donggukton.util.binding.BindingActivity
 
-class MainActivity : BindingActivity<ActivityMainBinding>(R.layout.activity_main){
+class ResultActivity : BindingActivity<ActivityResultBinding>(R.layout.activity_result) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
