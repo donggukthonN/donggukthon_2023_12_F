@@ -1,8 +1,6 @@
 package com.example.donggukton.presentation.addFriend
 
-import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import com.example.donggukton.R
 import com.example.donggukton.databinding.ActivityAddFriendBinding
 import com.example.donggukton.util.binding.BindingActivity
