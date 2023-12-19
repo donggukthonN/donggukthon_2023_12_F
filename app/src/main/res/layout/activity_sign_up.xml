@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:padding="6dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_sign_up_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/sign_up_title"
+            android:textAppearance="@style/Headline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+        <TextView
+            android:id="@+id/sign_up_nickname_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_32"
+            android:layout_marginTop="60dp"
+            android:text="@string/sign_up_nickname_title"
+            android:textAppearance="@style/Title1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sign_up_title"
+            tools:layout_editor_absoluteX="52dp" />
+
+        <EditText
+            android:id="@+id/et_sign_up_nickname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:layout_marginTop="16dp"
+            android:hint="@string/sign_up_nickname_hint"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:textAppearance="@style/Body_M2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_nickname_title" />
+
+        <TextView
+            android:id="@+id/sign_up_id_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_32"
+            android:layout_marginTop="20dp"
+            android:text="@string/sign_up_id_title"
+            android:textAppearance="@style/Title1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_sign_up_nickname"
+            tools:layout_editor_absoluteX="52dp" />
+
+        <EditText
+            android:id="@+id/et_sign_up_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_32"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:hint="@string/sign_up_id_hint"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:textAppearance="@style/Body_M2"
+            app:layout_constraintEnd_toStartOf="@id/btn_id_duplicated_check"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_id_title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_id_duplicated_check"
+            style="@style/Widget.FullButton.Basic.Elevation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:backgroundTint="@color/green"
+            android:paddingVertical="7dp"
+            android:text="@string/sign_up_id_double_check"
+            android:textAppearance="@style/Body_M2"
+            app:elevation="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/et_sign_up_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/et_sign_up_id" />
+
+        <TextView
+            android:id="@+id/sign_up_password_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_32"
+            android:layout_marginTop="20dp"
+            android:text="@string/sign_up_pw_title"
+            android:textAppearance="@style/Title1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_sign_up_id"
+            tools:layout_editor_absoluteX="52dp" />
+
+        <EditText
+            android:id="@+id/et_sign_up_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:layout_marginTop="16dp"
+            android:hint="@string/sign_up_password_hint"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:textAppearance="@style/Body_M2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_password_title" />
+
+        <TextView
+            android:id="@+id/sign_up_password_check_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_32"
+            android:layout_marginTop="20dp"
+            android:text="@string/sign_up_pw_check_title"
+            android:textAppearance="@style/Title1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_sign_up_password"
+            tools:layout_editor_absoluteX="52dp" />
+
+        <EditText
+            android:id="@+id/et_sign_up_password_check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_32"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:textAppearance="@style/Body_M2"
+            app:layout_constraintEnd_toStartOf="@+id/btn_password_double_check"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_password_check_title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_password_double_check"
+            style="@style/Widget.FullButton.Basic.Elevation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:backgroundTint="@color/green"
+            android:paddingVertical="7dp"
+            android:text="@string/confirm"
+            android:textAppearance="@style/Body_M2"
+            app:elevation="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/et_sign_up_password_check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/et_sign_up_password_check" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_up"
+            style="@style/Widget.FullButton.Basic.Elevation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_32"
+            android:layout_marginBottom="70dp"
+            android:backgroundTint="@color/green"
+            android:paddingVertical="12dp"
+            android:text="확인"
+            android:textAppearance="@style/Body_M1"
+            app:elevation="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
