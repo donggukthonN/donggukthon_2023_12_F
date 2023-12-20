@@ -5,27 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/iv_question_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:padding="6dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tv_question_num"
         style="@style/Headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:textColor="#797979"
-        app:layout_constraintStart_toEndOf="@+id/iv_question_back"
-        app:layout_constraintTop_toBottomOf="@+id/iv_question_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="No.1" />
 
     <ImageView

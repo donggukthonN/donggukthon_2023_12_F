@@ -15,6 +15,8 @@ data class ResponseFriendDto(
         val id: String,
         @SerialName("complete")
         val complete: Int,
+        @SerialName("nickname")
+        val nickname: String,
     )
 
     fun toFriend() = FriendList(
@@ -22,6 +24,7 @@ data class ResponseFriendDto(
             FriendList.FriendData(
                 id = friend.id,
                 complete = friend.complete,
+                nickname = friend.nickname,
             )
         },
     )

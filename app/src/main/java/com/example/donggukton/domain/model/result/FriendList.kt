@@ -6,5 +6,6 @@ data class FriendList(
     data class FriendData(
         val id: String,
         val complete: Int,
+        val nickname: String,
     )
 }
