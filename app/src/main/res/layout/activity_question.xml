@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.donggukton.presentation.question.QuestionViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:layout_marginTop="18dp"
-            android:text="No.%d"
+            android:text="@string/question_num"
             android:textColor="#797979"
             app:layout_constraintStart_toEndOf="@+id/iv_question_back"
             app:layout_constraintTop_toBottomOf="@+id/iv_question_back"
@@ -40,7 +44,7 @@
             android:id="@+id/iv_question_logo"
             android:layout_width="92dp"
             android:layout_height="105dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/img_question_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -67,15 +71,36 @@
             android:layout_marginTop="26dp"
             android:background="@drawable/shape_stroke_radius_8"
             android:backgroundTint="#4D005924"
+            android:gravity="top"
             android:maxLength="161"
             android:paddingHorizontal="23dp"
             android:paddingVertical="25dp"
+            android:text="@={viewModel.answer}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_question_title" />
+
+        <TextView
+            android:id="@+id/tv_question_answer"
+            style="@style/Title1"
+            android:layout_width="0dp"
+            android:layout_height="221dp"
+            android:layout_marginHorizontal="33dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/shape_stroke_radius_8"
+            android:backgroundTint="#4D005924"
+            android:gravity="top"
+            android:maxLength="161"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="25dp"
+            android:text="@={viewModel.answer}"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_question_title" />
 
         <CheckBox
-            android:id="@+id/btn_question_private"
+            android:id="@+id/cb_question_private"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
@@ -94,9 +119,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="비공개"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_question_private"
-            app:layout_constraintStart_toEndOf="@+id/btn_question_private"
-            app:layout_constraintTop_toTopOf="@+id/btn_question_private" />
+            app:layout_constraintBottom_toBottomOf="@+id/cb_question_private"
+            app:layout_constraintStart_toEndOf="@+id/cb_question_private"
+            app:layout_constraintTop_toTopOf="@+id/cb_question_private" />
 
         <ImageView
             android:id="@+id/btn_question_done"

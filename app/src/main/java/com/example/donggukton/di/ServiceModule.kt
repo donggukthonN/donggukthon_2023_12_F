@@ -2,6 +2,8 @@ package com.example.donggukton.di
 
 import com.example.donggukton.data.service.AuthService
 import com.example.donggukton.data.service.FriendService
+import com.example.donggukton.data.service.MyService
+import com.example.donggukton.data.service.QuestionService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,4 +23,12 @@ object ServiceModule {
     @Provides
     @Singleton
     fun provideAuthService(retrofit: Retrofit): AuthService = retrofit.create()
+
+    @Provides
+    @Singleton
+    fun provideQuestionService(retrofit: Retrofit): QuestionService = retrofit.create()
+
+    @Provides
+    @Singleton
+    fun provideMyService(retrofit: Retrofit): MyService = retrofit.create()
 }
