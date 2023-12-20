@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "795660491916",
+    "project_id": "qfeed-713ec",
+    "storage_bucket": "qfeed-713ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795660491916:android:d4f33ef6f40f767cb82fa9",
+        "android_client_info": {
+          "package_name": "com.example.donggukton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANyhXZoIzjTfhyMl6wKlXqVsk0pmgdxZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
