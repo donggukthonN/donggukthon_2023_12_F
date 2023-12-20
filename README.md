@@ -47,7 +47,6 @@
 📂 com.HowDroid
 ┣ 📂 data
 ┃ ┣ 📂 datasource
-┃ ┣ 📂 inetceptor
 ┃ ┣ 📂 model
 ┃ ┣ 📂 repository
 ┃ ┣ 📂 service
@@ -56,12 +55,13 @@
 ┃ ┣ 📂 model
 ┃ ┣ 📂 repository
 ┣ 📂 presentation
-┃ ┣ 📂 addtodo
-┃ ┣ 📂 chart
+┃ ┣ 📂 auth
+┃ ┣ 📂 result
 ┃ ┣ 📂 home
 ┃ ┣ 📂 login
-┃ ┣ 📂 myfailtag
-┃ ┣ 📂 signup
+┃ ┣ 📂 addFriend
+┃ ┣ 📂 onBoarding
+┃ ┣ 📂 question
 ┃ ┣ 📂 type
 ┣ 📂 util
 ┃ ┣ 📂 binding
