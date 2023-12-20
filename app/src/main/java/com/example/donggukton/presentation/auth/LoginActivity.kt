@@ -10,6 +10,7 @@ import com.example.donggukton.databinding.ActivityLoginBinding
 import com.example.donggukton.presentation.home.HomeActivity
 import com.example.donggukton.util.binding.BindingActivity
 import com.example.donggukton.util.extension.showToast
+import com.example.donggukton.util.extension.startActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -32,6 +33,9 @@ class LoginActivity : BindingActivity<ActivityLoginBinding>(R.layout.activity_lo
         }
         binding.btnLogin.setOnClickListener {
             viewModel.login()
+        }
+        binding.tvSignUp.setOnClickListener {
+           startActivity<SignUpActivity>()
         }
     }
 
