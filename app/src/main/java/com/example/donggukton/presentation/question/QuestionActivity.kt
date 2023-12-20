@@ -1,7 +1,7 @@
 package com.example.donggukton.presentation.question
 
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -22,7 +22,7 @@ class QuestionActivity : BindingActivity<ActivityQuestionBinding>(R.layout.activ
 
         binding.viewModel = viewModel
         qId = intent.getIntExtra(QUESTION_NUM, -1)
-        viewModel.getQuestion(qId)
+        viewModel.getAnswerResult(qId)
 
         initLayout()
         addListeners()
@@ -52,6 +52,14 @@ class QuestionActivity : BindingActivity<ActivityQuestionBinding>(R.layout.activ
         viewModel.replyAnswer.flowWithLifecycle(lifecycle).onEach {
             if (it == true) {
                 finish()
+            }
+        }.launchIn(lifecycleScope)
+        viewModel.answerResult.flowWithLifecycle(lifecycle).onEach { answerResult ->
+            if (answerResult != null) {
+                binding.tvQuestionTitle.text = answerResult.question
+                binding.tvQuestionAnswer.text = answerResult.answer
+                binding.tvQuestionAnswer.visibility = View.VISIBLE
+                binding.etQuestionAnswer.visibility = View.INVISIBLE
             }
         }.launchIn(lifecycleScope)
     }

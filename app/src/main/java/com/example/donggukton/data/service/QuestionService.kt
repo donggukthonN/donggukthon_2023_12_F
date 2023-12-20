@@ -1,6 +1,7 @@
 package com.example.donggukton.data.service
 
 import com.example.donggukton.data.model.request.RequestReplyAnswer
+import com.example.donggukton.data.model.response.ResponseAnswerResult
 import com.example.donggukton.data.model.response.ResponseQuestion
 import com.example.donggukton.data.model.response.ResponseReplyAnswer
 import retrofit2.http.Body
@@ -21,4 +22,10 @@ interface QuestionService {
         @Path("u_id") u_id: String,
         @Path("q_id") q_id: Int
     ): ResponseReplyAnswer
+
+    @GET("{u_id}/question/calendar/{q_id}/")
+    suspend fun getAnswerResult(
+        @Path("u_id") u_id: String,
+        @Path("q_id") q_id: Int
+    ): ResponseAnswerResult
 }

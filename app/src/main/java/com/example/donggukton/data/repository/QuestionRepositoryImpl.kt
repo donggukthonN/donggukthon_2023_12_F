@@ -2,6 +2,7 @@ package com.example.donggukton.data.repository
 
 import com.example.donggukton.data.datasource.remote.QuestionDataSource
 import com.example.donggukton.data.model.request.RequestReplyAnswer
+import com.example.donggukton.data.model.response.ResponseAnswerResult
 import com.example.donggukton.data.model.response.ResponseQuestion
 import com.example.donggukton.data.model.response.ResponseReplyAnswer
 import com.example.donggukton.domain.repository.QuestionRepository
@@ -22,5 +23,10 @@ class QuestionRepositoryImpl @Inject constructor(
     ): Result<ResponseReplyAnswer> =
         kotlin.runCatching {
             questionDataSource.replyAnswer(requestReplyAnswer, uId, qId)
+        }
+
+    override suspend fun getAnswerResult(uId: String, qId: Int): Result<ResponseAnswerResult> =
+        runCatching {
+            questionDataSource.getAnswerResult(uId, qId)
         }
 }

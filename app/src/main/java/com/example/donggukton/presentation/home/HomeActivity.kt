@@ -25,6 +25,15 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
         binding.ivQuestion.setOnClickListener {
             startActivity(Intent(this, InstructionActivity::class.java))
         }
+        binding.tv13.setOnClickListener {
+            moveToQuestion(13)
+        }
+        binding.tv14.setOnClickListener {
+            moveToQuestion(14)
+        }
+        binding.tv15.setOnClickListener {
+            moveToQuestion(15)
+        }
         binding.tv16.setOnClickListener {
             moveToQuestion(16)
         }
@@ -39,6 +48,21 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
         }
         binding.tv20.setOnClickListener {
             moveToQuestion(20)
+        }
+        binding.tv21.setOnClickListener {
+            moveToQuestion(21)
+        }
+        binding.tv22.setOnClickListener {
+            moveToQuestion(22)
+        }
+        binding.tv23.setOnClickListener {
+            moveToQuestion(23)
+        }
+        binding.tv24.setOnClickListener {
+            moveToQuestion(24)
+        }
+        binding.tv25.setOnClickListener {
+            moveToQuestion(25)
         }
     }
 

@@ -285,7 +285,7 @@
                 android:id="@+id/iv_tree2"
                 android:layout_width="321dp"
                 android:layout_height="470dp"
-                android:src="@drawable/img_tree"
+                android:src="@drawable/img_tree2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -462,8 +462,20 @@
                 app:layout_constraintStart_toEndOf="@+id/tv_23"
                 app:layout_constraintTop_toTopOf="@+id/tv_21" />
 
+            <TextView
+                android:id="@+id/tv_25"
+                style="@style/Subtitle1_B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="25"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_tree2"
+                app:layout_constraintStart_toEndOf="@+id/tv_23"
+                app:layout_constraintTop_toBottomOf="@+id/tv_24" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

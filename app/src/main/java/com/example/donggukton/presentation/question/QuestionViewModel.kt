@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.donggukton.data.datasource.local.DonggukStorage
 import com.example.donggukton.data.model.request.RequestReplyAnswer
+import com.example.donggukton.data.model.response.ResponseAnswerResult
 import com.example.donggukton.domain.repository.QuestionRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,8 +25,10 @@ class QuestionViewModel @Inject constructor(
     val isPrivate get() = _isPrivate.asStateFlow()
     private val _replyAnswer = MutableStateFlow<Boolean?>(null)
     val replyAnswer get() = _replyAnswer.asStateFlow()
+    private val _answerResult = MutableStateFlow<ResponseAnswerResult?>(null)
+    val answerResult get() = _answerResult.asStateFlow()
 
-    fun getQuestion(qId: Int) {
+    private fun getQuestion(qId: Int) {
         viewModelScope.launch {
             questionRepository.getQuestion(
                 uId = localDataStore.userId,
@@ -48,6 +51,20 @@ class QuestionViewModel @Inject constructor(
                 _replyAnswer.value = success.success
             }.onFailure { throwable ->
                 Timber.d(throwable.message)
+            }
+        }
+    }
+
+    fun getAnswerResult(qId: Int) {
+        viewModelScope.launch {
+            questionRepository.getAnswerResult(
+                qId = qId,
+                uId = localDataStore.userId
+            ).onSuccess { answerResult ->
+                _answerResult.value = answerResult
+            }.onFailure { throwable ->
+                Timber.d(throwable.message)
+                getQuestion(qId)
             }
         }
     }
