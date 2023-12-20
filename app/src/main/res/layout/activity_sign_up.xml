@@ -108,6 +108,16 @@
             app:layout_constraintTop_toTopOf="@+id/et_sign_up_id" />
 
         <TextView
+            android:id="@+id/tv_duplicated_email_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Caption1"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/btn_id_duplicated_check"
+            app:layout_constraintTop_toBottomOf="@+id/et_sign_up_id"
+            tools:text="아이디 중복 확인 성공!" />
+
+        <TextView
             android:id="@+id/sign_up_password_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
