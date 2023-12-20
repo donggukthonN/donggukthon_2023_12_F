@@ -15,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MyViewModel @Inject constructor(
     private val myRepository: MyRepository,
-    private val localDataStorage: DonggukStorage
+    private val localDataStorage: DonggukStorage,
 ) : ViewModel() {
     private val _myInfo = MutableStateFlow<ResponseMyInfo?>(null)
     val myInfo get() = _myInfo.asStateFlow()
@@ -29,6 +29,7 @@ class MyViewModel @Inject constructor(
             myRepository.getMyInfo(localDataStorage.userId)
                 .onSuccess { myInfo ->
                     _myInfo.value = myInfo
+                    localDataStorage.userName = myInfo.nickname
                 }.onFailure { throwable ->
                     Timber.e(throwable.message)
                 }

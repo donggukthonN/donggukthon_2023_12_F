@@ -1,5 +1,7 @@
 package com.example.donggukton.data.datasource.remote
 
+import com.example.donggukton.data.model.request.RequestAddFriendDto
+import com.example.donggukton.data.model.response.ResponseAddFriendDto
 import com.example.donggukton.data.model.response.ResponseFriendDto
 import com.example.donggukton.data.service.FriendService
 import retrofit2.Response
@@ -13,4 +15,10 @@ class FriendDataSource @Inject constructor(
 
     suspend fun deleteFriend(u_id: String, f_id: String): Response<Unit> =
         friendService.deleteFriend(u_id, f_id)
+
+    suspend fun postFriend(
+        u_id: String,
+        requestAddFriendDto: RequestAddFriendDto,
+    ): ResponseAddFriendDto =
+        friendService.postFriend(u_id, requestAddFriendDto)
 }

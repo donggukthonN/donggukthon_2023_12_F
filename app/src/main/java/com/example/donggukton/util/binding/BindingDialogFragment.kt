@@ -9,7 +9,6 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
-import com.example.donggukton.R
 
 abstract class BindingDialogFragment<B : ViewDataBinding>(@LayoutRes private val layoutRes: Int) :
     DialogFragment() {
@@ -20,7 +19,7 @@ abstract class BindingDialogFragment<B : ViewDataBinding>(@LayoutRes private val
         super.onStart()
         dialog?.window?.setLayout(
             WindowManager.LayoutParams.MATCH_PARENT,
-            WindowManager.LayoutParams.WRAP_CONTENT
+            WindowManager.LayoutParams.WRAP_CONTENT,
         )
         dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
     }

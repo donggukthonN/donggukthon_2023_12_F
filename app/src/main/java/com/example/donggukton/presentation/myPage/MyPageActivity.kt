@@ -8,6 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.donggukton.R
 import com.example.donggukton.databinding.ActivityMyPageBinding
 import com.example.donggukton.presentation.addFriend.AddFriendActivity
+import com.example.donggukton.presentation.result.ResultActivity
 import com.example.donggukton.util.binding.BindingActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
@@ -28,7 +29,10 @@ class MyPageActivity : BindingActivity<ActivityMyPageBinding>(R.layout.activity_
             startActivity(Intent(this, MyInfoActivity::class.java))
         }
         binding.btnMyResult.setOnClickListener {
-            // 내 완성본으로 이동
+            val intent = Intent(this, ResultActivity::class.java).apply {
+                putExtra(MY, MY)
+            }
+            startActivity(intent)
         }
         binding.btnMyAddFriend.setOnClickListener {
             startActivity(Intent(this, AddFriendActivity::class.java))
@@ -47,5 +51,9 @@ class MyPageActivity : BindingActivity<ActivityMyPageBinding>(R.layout.activity_
                     getString(R.string.my_page_finished_version_title, myInfo.nickname)
             }
         }.launchIn(lifecycleScope)
+    }
+
+    companion object {
+        const val MY = "my"
     }
 }

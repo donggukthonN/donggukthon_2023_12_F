@@ -1,7 +1,6 @@
 package com.example.donggukton.presentation.question
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.example.donggukton.R
@@ -20,7 +19,7 @@ class ConfirmAnswerDialogFragment :
         addListeners()
     }
 
-    private fun addListeners(){
+    private fun addListeners() {
         binding.ivClose.setOnClickListener {
             dismiss()
         }

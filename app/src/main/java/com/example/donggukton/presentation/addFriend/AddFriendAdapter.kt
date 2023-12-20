@@ -11,7 +11,7 @@ import com.example.donggukton.util.extension.ItemDiffCallback
 import com.example.donggukton.util.extension.setOnSingleClickListener
 
 class AddFriendAdapter(
-    private val onClick: (String) -> Unit,
+    private val onClick: (String, String) -> Unit,
     private val deleteFriend: (String) -> Unit,
 ) : ListAdapter<FriendList.FriendData, AddFriendAdapter.AddFriendViewHolder>(
     ItemDiffCallback<FriendList.FriendData>(
@@ -33,16 +33,16 @@ class AddFriendAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(data: FriendList.FriendData) {
-            binding.tvItemName.text = String.format("%s 님", data.id)
+            binding.tvItemName.text = String.format("%s 님", data.nickname)
 
             if (data.complete == 0) {
                 val color = Color.parseColor("#707070")
                 binding.clFriend.background.setTint(color)
-                binding.tvItemGotoFriend.isClickable = false
+                binding.tvItemGotoFriend.isEnabled = false
             }
 
             binding.tvItemGotoFriend.setOnSingleClickListener {
-                onClick(data.id)
+                onClick(data.id, data.nickname)
             }
             binding.tvItemDeleteFriend.setOnSingleClickListener {
                 deleteFriend(data.id)

@@ -87,7 +87,7 @@ class SignUpActivity : BindingActivity<ActivitySignUpBinding>(R.layout.activity_
                 }
             }
         }.launchIn(lifecycleScope)
-        viewModel.isValidPasswordCheck.flowWithLifecycle(lifecycle).onEach { isValidPasswordCheck->
+        viewModel.isValidPasswordCheck.flowWithLifecycle(lifecycle).onEach { isValidPasswordCheck ->
             when (isValidPasswordCheck) {
                 true -> {
                     with(binding) {

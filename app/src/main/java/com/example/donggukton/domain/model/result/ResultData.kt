@@ -1,14 +1,13 @@
 package com.example.donggukton.domain.model.result
 
-data class Result(
+data class ResultData(
     val userId: String,
     val questions: List<Question>,
 ) {
-
     data class Question(
-        val questionNum: String,
+        val questionNum: Int,
         val question: String,
-        val answer: String,
-        val flag: Boolean,
+        val answer: String?,
+        val flag: Int?,
     )
 }

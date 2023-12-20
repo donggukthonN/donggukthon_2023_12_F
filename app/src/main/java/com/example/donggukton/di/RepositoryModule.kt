@@ -4,10 +4,12 @@ import com.example.donggukton.data.repository.AuthRepositoryImpl
 import com.example.donggukton.data.repository.FriendRepositoryImpl
 import com.example.donggukton.data.repository.MyRepositoryImpl
 import com.example.donggukton.data.repository.QuestionRepositoryImpl
+import com.example.donggukton.data.repository.ResultRepositoryImpl
 import com.example.donggukton.domain.repository.AuthRepository
 import com.example.donggukton.domain.repository.FriendRepository
 import com.example.donggukton.domain.repository.MyRepository
 import com.example.donggukton.domain.repository.QuestionRepository
+import com.example.donggukton.domain.repository.ResultRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,4 +39,9 @@ object RepositoryModule {
     @Singleton
     fun provideMyRepository(myRepositoryImpl: MyRepositoryImpl): MyRepository =
         myRepositoryImpl
+
+    @Provides
+    @Singleton
+    fun providesResultRepository(resultRepositoryImpl: ResultRepositoryImpl): ResultRepository =
+        resultRepositoryImpl
 }
