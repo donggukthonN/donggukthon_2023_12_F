@@ -9,8 +9,8 @@ enum class OnBoardingViewType(
     @StringRes val desRes: Int,
 ) {
     FIRST(
-        R.drawable.img_onboarding_2,
-        R.string.onBoarding_des_2,
+        R.drawable.img_onboarding_1,
+        R.string.onBoarding_des_1,
     ),
     SECOND(
         R.drawable.img_onboarding_2,

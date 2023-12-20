@@ -55,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Body_M1"
                 app:layout_constraintStart_toStartOf="parent"
+                tools:text="@string/my_info_start_date"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -64,7 +65,8 @@
                 android:layout_marginTop="16dp"
                 android:textAppearance="@style/Body_M1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_my_info_register_date" />
+                app:layout_constraintTop_toBottomOf="@id/tv_my_info_register_date"
+                tools:text="@string/my_info_id" />
 
             <TextView
                 android:id="@+id/tv_my_info_code"
@@ -74,7 +76,7 @@
                 android:textAppearance="@style/Body_M1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_my_info_id"
-                tools:text="🎄 개별코드" />
+                tools:text="@string/my_info_code" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

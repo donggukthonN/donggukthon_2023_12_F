@@ -3,19 +3,35 @@ package com.example.donggukton.presentation.home
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import com.example.donggukton.R
 import com.example.donggukton.databinding.ActivityHomeBinding
 import com.example.donggukton.presentation.myPage.MyPageActivity
+import com.example.donggukton.presentation.myPage.MyViewModel
 import com.example.donggukton.presentation.question.QuestionActivity
 import com.example.donggukton.util.binding.BindingActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home) {
+    private val myViewModel: MyViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        collectData()
         addListeners()
+    }
+
+    private fun collectData() {
+        myViewModel.myInfo.flowWithLifecycle(lifecycle).onEach { myInfo ->
+            if (myInfo != null) {
+                binding.tvHomeTitle.text =
+                    getString(R.string.name_title, myInfo.nickname)
+            }
+        }.launchIn(lifecycleScope)
     }
 
     private fun addListeners() {

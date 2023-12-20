@@ -2,9 +2,11 @@ package com.example.donggukton.di
 
 import com.example.donggukton.data.repository.AuthRepositoryImpl
 import com.example.donggukton.data.repository.FriendRepositoryImpl
+import com.example.donggukton.data.repository.MyRepositoryImpl
 import com.example.donggukton.data.repository.QuestionRepositoryImpl
 import com.example.donggukton.domain.repository.AuthRepository
 import com.example.donggukton.domain.repository.FriendRepository
+import com.example.donggukton.domain.repository.MyRepository
 import com.example.donggukton.domain.repository.QuestionRepository
 import dagger.Module
 import dagger.Provides
@@ -30,4 +32,9 @@ object RepositoryModule {
     @Singleton
     fun provideQuestionRepository(questionRepositoryImpl: QuestionRepositoryImpl): QuestionRepository =
         questionRepositoryImpl
+
+    @Provides
+    @Singleton
+    fun provideMyRepository(myRepositoryImpl: MyRepositoryImpl): MyRepository =
+        myRepositoryImpl
 }
