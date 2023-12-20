@@ -2,6 +2,7 @@ package com.example.donggukton.presentation.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -14,10 +15,14 @@ import com.example.donggukton.util.binding.BindingActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import java.time.LocalDate
+import kotlin.properties.Delegates
 
 @AndroidEntryPoint
 class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home) {
     private val myViewModel: MyViewModel by viewModels()
+    var dayCount by Delegates.notNull<Int>()
+    val today = LocalDate.now().dayOfMonth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,6 +35,11 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
             if (myInfo != null) {
                 binding.tvHomeTitle.text =
                     getString(R.string.name_title, myInfo.nickname)
+
+                val startDate =
+                    myInfo.startDate.substring(myInfo.startDate.length - 2, myInfo.startDate.length)
+                dayCount = today - startDate.toInt() + 1
+                Log.e("aaa", dayCount.toString())
             }
         }.launchIn(lifecycleScope)
     }
@@ -42,43 +52,58 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
             startActivity(Intent(this, InstructionActivity::class.java))
         }
         binding.tv13.setOnClickListener {
-            moveToQuestion(13)
+            setCalender(13)
         }
         binding.tv14.setOnClickListener {
-            moveToQuestion(14)
+            setCalender(14)
         }
         binding.tv15.setOnClickListener {
-            moveToQuestion(15)
+            setCalender(15)
         }
         binding.tv16.setOnClickListener {
-            moveToQuestion(16)
+            setCalender(16)
         }
         binding.tv17.setOnClickListener {
-            moveToQuestion(17)
+            setCalender(17)
         }
         binding.tv18.setOnClickListener {
-            moveToQuestion(18)
+            setCalender(18)
         }
         binding.tv19.setOnClickListener {
-            moveToQuestion(19)
+            setCalender(19)
         }
         binding.tv20.setOnClickListener {
-            moveToQuestion(20)
+            setCalender(20)
         }
         binding.tv21.setOnClickListener {
-            moveToQuestion(21)
+            setCalender(21)
         }
         binding.tv22.setOnClickListener {
-            moveToQuestion(22)
+            setCalender(22)
         }
         binding.tv23.setOnClickListener {
-            moveToQuestion(23)
+            setCalender(23)
         }
         binding.tv24.setOnClickListener {
-            moveToQuestion(24)
+            setCalender(24)
         }
         binding.tv25.setOnClickListener {
-            moveToQuestion(25)
+            setCalender(25)
+        }
+    }
+
+    // TODO 네이밍 작성
+    private fun setCalender(dayNum: Int) {
+        if (dayNum < dayCount - 2) {
+            PreLockDialogFragment().show(supportFragmentManager, PreLockDialogFragment().tag)
+        } else if (dayNum > dayCount) {
+            val fragment = PostLockDialogFragment()
+            val bundle = Bundle()
+            bundle.putInt(REST_OF_DAY, dayNum - today)
+            fragment.arguments = bundle
+            fragment.show(supportFragmentManager, fragment.tag)
+        } else {
+            moveToQuestion(dayNum)
         }
     }
 
@@ -90,5 +115,6 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
 
     companion object {
         const val QUESTION_NUM = "questionNum"
+        const val REST_OF_DAY = "restOfDay"
     }
 }
