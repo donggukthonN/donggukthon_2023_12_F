@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.donggukton.data.datasource.local.DonggukStorage
 import com.example.donggukton.data.model.request.LoginRequest
+import com.example.donggukton.data.model.request.RequestSignUp
 import com.example.donggukton.data.model.response.LoginResponse
 import com.example.donggukton.domain.repository.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -58,6 +59,10 @@ class AuthViewModel @Inject constructor(
             isValidNickName && isValidId && isValidPassword && isValidPasswordCheck
         }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), false)
 
+    private val _signUpResult = MutableStateFlow<Boolean?>(null)
+    val signUpResult get() = _signUpResult.asStateFlow()
+    private val _duplicatedResult = MutableStateFlow<Boolean?>(null)
+    val duplicatedResult get() = _duplicatedResult.asStateFlow()
     fun login() {
         viewModelScope.launch {
             authRepository.login(
@@ -71,6 +76,41 @@ class AuthViewModel @Inject constructor(
                 Timber.d(throwable.message)
             }
         }
+    }
+
+    fun signUp() {
+        viewModelScope.launch {
+            authRepository.signUp(
+                RequestSignUp(
+                    userId = id.value,
+                    nickname = nickName.value,
+                    password = password.value
+                )
+            ).onSuccess { signUpResult ->
+                _signUpResult.value = signUpResult
+            }.onFailure { throwable ->
+                Timber.d(throwable.message)
+            }
+        }
+    }
+
+    fun checkDuplicatedId() {
+        viewModelScope.launch {
+            authRepository.checkDuplicatedId(id.value)
+                .onSuccess { response ->
+                    if (response.code() == 200) {
+                        _duplicatedResult.value = false
+                    } else if (response.code() == 400) {
+                        _duplicatedResult.value = true
+                    }
+                }.onFailure { throwable ->
+                    Timber.d(throwable.message)
+                }
+        }
+    }
+
+    fun setDuplicatedResultNull() {
+        _duplicatedResult.value = null
     }
 
     fun setUserId(userId: String) {
